@@ -68,7 +68,7 @@ class _HomeState extends State<Login> {
                 FadeAnimation(
                   1,
                   Text(
-                    "WELCOME",
+                    "WELCOME TO HMS",
                     style: TextStyle(
                       fontSize: 30,
                       color: Colors.white,
