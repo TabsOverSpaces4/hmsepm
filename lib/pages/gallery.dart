@@ -39,10 +39,10 @@ class CarouselDemoState extends State<Gallery> {
       appBar: AppBar(
         title: Text('Gallery'),
         centerTitle: true,
-        backgroundColor: Colors.red[200],
+        backgroundColor: Colors.blueGrey[900],
         elevation: 0.0,
       ),
-      backgroundColor: Colors.red[100],
+      backgroundColor: Colors.blueGrey[900],
       body: Container(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -94,7 +94,7 @@ class CarouselDemoState extends State<Gallery> {
                   margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 2.0),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: _current == index ? Colors.red[300] : Colors.red[200],
+                    color: _current == index ? Colors.teal[400] : Colors.teal[300],
                   ),
                 );
               }),
@@ -118,6 +118,13 @@ class CarouselDemoState extends State<Gallery> {
           ],
         ),
       ),
+       floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.pushNamed(context, '/login');
+        },
+        child: const Icon(Icons.home_outlined),
+        backgroundColor: Colors.teal[400],
+    )
     );
   }
  
