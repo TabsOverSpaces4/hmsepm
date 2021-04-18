@@ -11,7 +11,8 @@ class _HomeState extends State<Login> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: Colors.blueGrey[900],
+      backgroundColor: Colors.red[100],
+      
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
@@ -71,7 +72,7 @@ class _HomeState extends State<Login> {
                     "WELCOME TO HMS",
                     style: TextStyle(
                       fontSize: 30,
-                      color: Colors.white,
+                      color: Colors.black,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -82,26 +83,49 @@ class _HomeState extends State<Login> {
                 SizedBox(
                   height: 20.0,
                 ),
+                SizedBox(
+                  height: 20.0,
+                ),
+                FadeAnimation(
+                  1,
+                  Container(
+                    height: 50,
+                    margin: EdgeInsets.symmetric(horizontal: 10),
+                child: RaisedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/profile');
+                  },
+                  child: Text(
+                    "Sign In",
+                    style: TextStyle(fontSize: 20, color: Colors.white),
+                  ),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30)),
+                  color: Colors.orangeAccent[700],
+                ),
+              ),
+                ),
+                SizedBox(
+                  height: 20.0,
+                ),
                 FadeAnimation(
                   1,
                   Container(
                     height: 50,
                     margin: EdgeInsets.symmetric(horizontal: 60),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(50),
-                      color: Colors.orangeAccent[700],
-                    ),
-                    child: Center(
-                        child: FlatButton(
-                      onPressed: () {
-                        Navigator.pushNamed(context, '/signup');
-                      },
-                      child: Text(
-                        "Sign Up",
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    )),
+                child: RaisedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/profile');
+                  },
+                  child: Text(
+                    "Sign In",
+                    style: TextStyle(fontSize: 20, color: Colors.white),
                   ),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30)),
+                  color: Colors.orangeAccent[700],
+                ),
+              ),
                 ),
                 SizedBox(
                   height: 20.0,
@@ -118,10 +142,10 @@ class _HomeState extends State<Login> {
                     child: Center(
                         child: FlatButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/signin');
+                        Navigator.pushNamed(context, '/gallery');
                       },
                       child: Text(
-                        "Sign In",
+                        "Gallery",
                         style: TextStyle(color: Colors.white),
                       ),
                     )),
@@ -132,6 +156,12 @@ class _HomeState extends State<Login> {
           )
         ],
       ),
-    );
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.pushNamed(context, '/info');
+        },
+        child: const Icon(Icons.info_outline),
+        backgroundColor: Colors.blueGrey[900],
+    ));
   }
 }
