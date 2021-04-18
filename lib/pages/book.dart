@@ -16,15 +16,15 @@ class Book extends StatefulWidget {
 class _TravelAppState extends State<Book> {
 
   List<String> urls = [
-    "https://resofrance.eu/wp-content/uploads/2018/09/hotel-luxe-mandarin-oriental-paris.jpg",
-    "https://lh3.googleusercontent.com/proxy/wTkD1USQGpbVXzZFNLCZBDCL1OQS1bFzSgPa44cHwiheaY9DpoqMdNjBgEJcCIZSQeSkCO-2q5gfuhtnuz4cDhtpansOcWos093YsGvogdQqWnpWlA",
-    "https://images.squarespace-cdn.com/content/v1/57d5245815d5db80eadeef3b/1558864684068-1CX3SZ0SFYZA1DFJSCYD/ke17ZwdGBToddI8pDm48kIpXjvpiLxnd0TWe793Q1fcUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcZwk0euuUA52dtKj-h3u7rSTnusqQy-ueHttlzqk_avnQ5Fuy2HU38XIezBtUAeHK/Marataba+Safari+lodge",
-    "https://lh3.googleusercontent.com/proxy/ovCSxeucYYoir_rZdSYq8FfCHPeot49lbYqlk7nXs7sXjqAfbZ2uw_1E9iivLT85LwIZiGSnXuqkdbQ_xKFhd91M7Y05G94d",
-    "https://q-xx.bstatic.com/xdata/images/hotel/max500/216968639.jpg?k=a65c7ca7141416ffec244cbc1175bf3bae188d1b4919d5fb294fab5ec8ee2fd2&o=",
-    "https://hubinstitute.com/sites/default/files/styles/1200x500_crop/public/2018-06/photo-1439130490301-25e322d88054.jpeg?h=f720410d&itok=HI5-oD_g",
-    "https://cdn.contexttravel.com/image/upload/c_fill,q_60,w_2600/v1549318570/production/city/hero_image_2_1549318566.jpg",
+    "https://images.unsplash.com/photo-1605346434674-a440ca4dc4c0?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGhvdGVsJTIwcm9vbXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "https://images.unsplash.com/photo-1568495248636-6432b97bd949?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aG90ZWwlMjByb29tfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "https://images.unsplash.com/photo-1568495248636-6432b97bd949?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aG90ZWwlMjByb29tfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "https://images.unsplash.com/photo-1568495248636-6432b97bd949?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aG90ZWwlMjByb29tfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "https://images.unsplash.com/photo-1568495248636-6432b97bd949?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aG90ZWwlMjByb29tfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "https://images.unsplash.com/photo-1518733057094-95b53143d2a7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTN8fGhvdGVsJTIwcm9vbXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "https://images.unsplash.com/photo-1561296275-ed0cadb83832?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzN8fGJhbmdhbG9yZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
     "https://www.shieldsgazette.com/images-i.jpimedia.uk/imagefetch/https://jpgreatcontent.co.uk/wp-content/uploads/2020/04/spain.jpg",
-    "https://www.telegraph.co.uk/content/dam/Travel/2017/November/tunisia-sidi-bou-GettyImages-575664325.jpg",
+    "https://images.unsplash.com/photo-1549366021-9f761d450615?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8d2lsZGxpZmV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
     "https://lp-cms-production.imgix.net/features/2018/06/byrsa-hill-carthage-tunis-tunisia-2d96efe7b9bf.jpg"
   ];
   
@@ -85,7 +85,7 @@ class _TravelAppState extends State<Book> {
                   hintText: "Or, search for it...",
                   prefixIcon: Icon(
                     Icons.search,
-                    color: Colors.white,
+                    color: Colors.teal[400],
                   ),
                   border: InputBorder.none,
                 ),
@@ -108,7 +108,7 @@ class _TravelAppState extends State<Book> {
                           text: "Trending",
                         ),
                         Tab(
-                          text: "Promotion",
+                          text: "Tourism",
                         ),
                         Tab(
                           text: "Favorites",
@@ -129,10 +129,10 @@ class _TravelAppState extends State<Book> {
                               children: [
                                 //Now let's add and test our first card
                                 travelCard(
-                                    urls[0], "Luxary Hotel", "Caroline", 3),
-                                travelCard(urls[5], "Plaza Hotel", "Italy", 4),
+                                    urls[0], "Single Bed", "Capacity: 1", 3),
+                                travelCard(urls[2], "Double Bed", "Capacity: 2", 4),
                                 travelCard(
-                                    urls[2], "Safari Hotel", "Africa", 5),
+                                    urls[5], "Founders Suite", "Capacity: 4", 5),
                               ],
                             ),
                           ),
@@ -140,10 +140,10 @@ class _TravelAppState extends State<Book> {
                             child: ListView(
                               scrollDirection: Axis.horizontal,
                               children: [
-                                //Here you can add what ever you want
-                                travelCard(urls[6], "Visit Rome", "Italy", 4),
-                                travelCard(urls[8], "Visit Sidi bou Said",
-                                    "Tunsia", 4),
+                                
+                                travelCard(urls[6], "Visit Kodai", "37Kms", 4),
+                                travelCard(urls[8], "bannerghatta national park",
+                                    "14kms", 4),
                               ],
                             ),
                           ),
@@ -166,6 +166,7 @@ class _TravelAppState extends State<Book> {
       bottomNavigationBar: BottomNavigationBar(
         unselectedItemColor: Colors.grey[350],
         selectedItemColor: Colors.teal[400],
+        backgroundColor: Colors.blueGrey[900],
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
