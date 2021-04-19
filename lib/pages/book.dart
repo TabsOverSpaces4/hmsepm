@@ -105,7 +105,7 @@ class _TravelAppState extends State<Book> {
                       labelPadding: EdgeInsets.symmetric(horizontal: 8.0),
                       tabs: [
                         Tab(
-                          text: "Trending",
+                          text: "Configurations",
                         ),
                         Tab(
                           text: "Tourism",

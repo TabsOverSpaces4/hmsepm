@@ -107,11 +107,12 @@ class CarouselDemoState extends State<Gallery> {
               children: <Widget>[
                 OutlineButton(
                   onPressed: goToPrevious,
-                  child: Text("<"),
+                  child: Text("<"), textColor: Colors.teal[400],
                 ),
                 OutlineButton(
                   onPressed: goToNext,
-                  child: Text(">"),
+                  child: Text(">"), textColor: Colors.teal[400],
+                  
                 ),
               ],
             ),
