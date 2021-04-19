@@ -79,7 +79,7 @@ class _HomeState extends State<Login> {
                     Navigator.pushNamed(context, '/book');
                   },
                   child: Text(
-                    "     Book a Room     ",
+                    "     Bookings     ",
                     style: TextStyle(fontSize: 20, color: Colors.white),
                   ),
                   shape: RoundedRectangleBorder(

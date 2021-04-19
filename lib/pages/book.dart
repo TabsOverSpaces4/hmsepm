@@ -111,7 +111,7 @@ class _TravelAppState extends State<Book> {
                           text: "Tourism",
                         ),
                         Tab(
-                          text: "Favorites",
+                          text: "KFC",
                         ),
                       ],
                     ),
@@ -167,6 +167,7 @@ class _TravelAppState extends State<Book> {
         unselectedItemColor: Colors.grey[350],
         selectedItemColor: Colors.teal[400],
         backgroundColor: Colors.blueGrey[900],
+        elevation: 0.0,
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
@@ -180,12 +181,10 @@ class _TravelAppState extends State<Book> {
             icon: Icon(Icons.location_on),
             title: Text("Destination"),
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.notifications),
-            title: Text("Notification"),
-          ),
+          
         ],
       ),
     );
   }
 }
+
