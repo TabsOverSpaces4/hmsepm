@@ -62,7 +62,7 @@ class _HomeState extends State<Login> {
                   ),
                 ),
                 SizedBox(
-                  height: 150,
+                  height: 100,
                 ),
                 SizedBox(
                   height: 20.0,
