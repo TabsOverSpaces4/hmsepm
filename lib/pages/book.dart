@@ -111,7 +111,7 @@ class _TravelAppState extends State<Book> {
                           text: "Tourism",
                         ),
                         Tab(
-                          text: "KFC",
+                          text: "Toast & Tonic",
                         ),
                       ],
                     ),
@@ -122,12 +122,12 @@ class _TravelAppState extends State<Book> {
                       height: 300.0,
                       child: TabBarView(
                         children: [
-                          //Now let's create our first tab page
+                          
                           Container(
                             child: ListView(
                               scrollDirection: Axis.horizontal,
                               children: [
-                                //Now let's add and test our first card
+                                
                                 travelCard(
                                     urls[0], "Single Bed", "Capacity: 1", 3),
                                 travelCard(urls[2], "Double Bed", "Capacity: 2", 4),
@@ -141,7 +141,18 @@ class _TravelAppState extends State<Book> {
                               scrollDirection: Axis.horizontal,
                               children: [
                                 
-                                travelCard(urls[6], "Visit Kodai", "37Kms", 4),
+                                travelCard(urls[6], "Visit Kodai", "37Kms", 5),
+                                travelCard(urls[8], "bannerghatta national park",
+                                    "14kms", 4),
+                              ],
+                            ),
+                          ),
+                          Container(
+                            child: ListView(
+                              scrollDirection: Axis.horizontal,
+                              children: [
+                                
+                                travelCard(urls[6], "Visit Kodai", "37Kms", 5),
                                 travelCard(urls[8], "bannerghatta national park",
                                     "14kms", 4),
                               ],

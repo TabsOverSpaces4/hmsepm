@@ -123,7 +123,7 @@ class CarouselDemoState extends State<Gallery> {
         onPressed: () {
           Navigator.pushNamed(context, '/login');
         },
-        child: const Icon(Icons.home_outlined),
+        child: const Icon(Icons.arrow_back_ios_outlined),
         backgroundColor: Colors.teal[400],
     )
     );

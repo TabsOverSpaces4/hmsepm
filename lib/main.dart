@@ -4,6 +4,7 @@ import 'package:hmsepm/pages/book.dart';
 import 'package:hmsepm/pages/loading.dart';
 import 'package:hmsepm/pages/gallery.dart';
 import 'package:hmsepm/pages/info.dart';
+import 'package:hmsepm/pages/Signin.dart';
 
 
 void main() => runApp(MaterialApp(initialRoute: '/login', routes: {
@@ -12,5 +13,6 @@ void main() => runApp(MaterialApp(initialRoute: '/login', routes: {
       '/gallery': (context) => Gallery(),
       '/info': (context) => Info(),
       '/book': (context) => Book(),
+      '/signin': (context) => SignIn(),
     },
     ));

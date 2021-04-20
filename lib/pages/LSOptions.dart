@@ -52,7 +52,8 @@ class _HomeState extends State<Login> {
                 FadeAnimation(
                   1,
                   Text(
-                    "WELCOME TO HMS",
+                    "Radisson Royal Orchid",
+                    
                     style: TextStyle(
                       fontSize: 30,
                       color: Colors.white,
@@ -80,6 +81,29 @@ class _HomeState extends State<Login> {
                   },
                   child: Text(
                     "     Bookings     ",
+                    style: TextStyle(fontSize: 20, color: Colors.white),
+                  ),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30)),
+                  color: Colors.teal[400],
+                ),
+              ),
+                ),
+                
+                SizedBox(
+                  height: 20.0,
+                ),
+                FadeAnimation(
+                  1,
+                  Container(
+                    height: 50,
+                    margin: EdgeInsets.symmetric(horizontal: 10),
+                child: RaisedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/signin');
+                  },
+                  child: Text(
+                    "     Track with your booking ID     ",
                     style: TextStyle(fontSize: 20, color: Colors.white),
                   ),
                   shape: RoundedRectangleBorder(

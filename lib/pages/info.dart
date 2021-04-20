@@ -15,7 +15,7 @@ class _NinjaCardState extends State<Info> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[900],
+      backgroundColor: Colors.blueGrey[900],
       appBar: AppBar(
         title: Text('About Us'),
         centerTitle: true,
@@ -24,13 +24,13 @@ class _NinjaCardState extends State<Info> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.pushNamed(context, '/login');
+          Navigator.pop(context);
           setState(() {
             ninjaLevel += 1;
           });
         },
-        backgroundColor: Colors.grey[800],
-        child: Icon(Icons.home_outlined),
+        backgroundColor: Colors.teal[400],
+        child: Icon(Icons.arrow_back_ios_outlined),
       ),
       body: Padding(
         padding: const EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0),
@@ -44,7 +44,7 @@ class _NinjaCardState extends State<Info> {
               ),
             ),
             Divider(
-              color: Colors.grey[800],
+              color: Colors.teal[400],
               height: 60.0,
             ),
 Container(
