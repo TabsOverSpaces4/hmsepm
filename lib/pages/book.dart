@@ -1,5 +1,8 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:hmsepm/pages/travelcard.dart';
+import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -14,7 +17,6 @@ class Book extends StatefulWidget {
 }
 
 class _TravelAppState extends State<Book> {
-
   List<String> urls = [
     "https://images.unsplash.com/photo-1605346434674-a440ca4dc4c0?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGhvdGVsJTIwcm9vbXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
     "https://images.unsplash.com/photo-1593560704563-f176a2eb61db?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8aW5kaWFuJTIwZm9vZHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
@@ -27,7 +29,10 @@ class _TravelAppState extends State<Book> {
     "https://images.unsplash.com/photo-1549366021-9f761d450615?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8d2lsZGxpZmV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
     "https://lp-cms-production.imgix.net/features/2018/06/byrsa-hill-carthage-tunis-tunisia-2d96efe7b9bf.jpg"
   ];
-  
+
+  int _currentIndex = 0;
+  int _counter = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,9 +41,7 @@ class _TravelAppState extends State<Book> {
         elevation: 0.0,
         backgroundColor: Colors.blueGrey[900],
         title: Row(
-          children: [
-            
-          ],
+          children: [],
         ),
       ),
       body: Padding(
@@ -47,7 +50,6 @@ class _TravelAppState extends State<Book> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            
             Text(
               "Welcome to HMS",
               style: TextStyle(
@@ -67,7 +69,6 @@ class _TravelAppState extends State<Book> {
             SizedBox(
               height: 20.0,
             ),
-            
             Material(
               elevation: 10.0,
               borderRadius: BorderRadius.circular(30.0),
@@ -86,7 +87,6 @@ class _TravelAppState extends State<Book> {
               ),
             ),
             SizedBox(height: 30.0),
-            
             DefaultTabController(
               length: 3,
               child: Expanded(
@@ -123,34 +123,39 @@ class _TravelAppState extends State<Book> {
                               children: [
                                 //Now let's add and test our first card
                                 travelCard(
-                                    urls[0], "Single Bed", "Capacity: 1", 3,),
-                                    
-                                travelCard(urls[2], "Double Bed", "Capacity: 2", 4),
+                                  urls[0],
+                                  "Single Bed",
+                                  "Capacity: 1",
+                                  3,
+                                ),
+
                                 travelCard(
-                                    urls[5], "Founders Suite", "Capacity: 4", 5),
+                                    urls[2], "Double Bed", "Capacity: 2", 4),
+                                travelCard(urls[5], "Founders Suite",
+                                    "Capacity: 4", 5),
                               ],
-                            ),
-                          ),
-                          Container(
-                            child:
-                             ListView(
-                              scrollDirection: Axis.horizontal,
-                              children: [
-                                
-                                travelCard(urls[6], "Visit Kodai", "37Kms", 4),
-                                travelCard(urls[8], "bannerghatta national park",
-                                    "14kms", 4),
-                              ],
-                              
                             ),
                           ),
                           Container(
                             child: ListView(
                               scrollDirection: Axis.horizontal,
                               children: [
-                                travelCard(urls[1], "Indian cousin", "37 Dishes", 5),
-                                travelCard(urls[3], "Chinese cousin", "28 Dishes", 5),
-                                travelCard(urls[4], "Italian cousin", "52 Dishes", 5),
+                                travelCard(urls[6], "Visit Kodai", "37Kms", 4),
+                                travelCard(urls[8],
+                                    "bannerghatta national park", "14kms", 4),
+                              ],
+                            ),
+                          ),
+                          Container(
+                            child: ListView(
+                              scrollDirection: Axis.horizontal,
+                              children: [
+                                travelCard(
+                                    urls[1], "Indian cousin", "37 Dishes", 5),
+                                travelCard(
+                                    urls[3], "Chinese cousin", "28 Dishes", 5),
+                                travelCard(
+                                    urls[4], "Italian cousin", "52 Dishes", 5),
                               ],
                             ),
                           ),
@@ -164,28 +169,44 @@ class _TravelAppState extends State<Book> {
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        unselectedItemColor: Colors.grey[350],
-        selectedItemColor: Colors.teal[400],
+
+      
+
+
+
+      bottomNavigationBar: BottomNavyBar(
+        selectedIndex: _currentIndex,
+        showElevation: false,
+        
+        itemCornerRadius: 24,
+        curve: Curves.easeIn,
         backgroundColor: Colors.blueGrey[900],
-        elevation: 0.0,
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            title: Text("Home"),
+        onItemSelected: (index) => setState(() => _currentIndex = index),
+        items: <BottomNavyBarItem>[
+          BottomNavyBarItem(
+            icon: Icon(Icons.apps),
+            title: Text('Home'),
+            activeColor: Colors.teal[400],
+            textAlign: TextAlign.center,
           ),
-          BottomNavigationBarItem(
+          BottomNavyBarItem(
             icon: Icon(Icons.bookmark),
-            title: Text("BookMark"),
+            title: Text('Bookmarks'),
+            activeColor: Colors.teal[400],
+            textAlign: TextAlign.center,
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.location_on),
-            title: Text("Destination"),
+          BottomNavyBarItem(
+            icon: Icon(Icons.king_bed),
+            title: Text(
+              'Bookings',
+            ),
+            activeColor: Colors.teal[400],
+            textAlign: TextAlign.center,
           ),
           
         ],
       ),
+      
     );
   }
 }
-
