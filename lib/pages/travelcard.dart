@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 Widget travelCard(
     String imgUrl, String hotelName, String location, int rating) {
   return Card(
@@ -10,7 +11,9 @@ Widget travelCard(
     ),
     elevation: 0.0,
     child: InkWell(
-      onTap: () {},
+      onTap: () {
+
+                      },
       child: Container(
         decoration: BoxDecoration(
             image: DecorationImage(
@@ -27,7 +30,6 @@ Widget travelCard(
             children: [
               Row(
                 children: [
-                  
                   for (var i = 0; i < rating; i++)
                     Icon(
                       Icons.star,
