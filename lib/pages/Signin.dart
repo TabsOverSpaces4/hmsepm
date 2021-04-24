@@ -105,7 +105,7 @@ class SignIn extends StatelessWidget {
                 width: deviceHorizontal * .8,
                 child: RaisedButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, '/book');
+                    Navigator.pushNamed(context, '/bill');
                   },
                   child: Text(
                     "Sign In",
@@ -128,7 +128,7 @@ class SignIn extends StatelessWidget {
                       style: TextStyle(color: Colors.grey),
                     ),
                     onPressed: () {
-                      Navigator.pushNamed(context, '/book');
+                      Navigator.pushNamed(context, '/form');
                     },
                   )),
             ],

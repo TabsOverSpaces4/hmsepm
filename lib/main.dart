@@ -5,6 +5,8 @@ import 'package:hmsepm/pages/loading.dart';
 import 'package:hmsepm/pages/gallery.dart';
 import 'package:hmsepm/pages/info.dart';
 import 'package:hmsepm/pages/Signin.dart';
+import 'package:hmsepm/pages/form.dart';
+import 'package:hmsepm/pages/bill.dart';
 
 
 
@@ -15,6 +17,8 @@ void main() => runApp(MaterialApp(initialRoute: '/login', routes: {
       '/info': (context) => Info(),
       '/book': (context) => Book(),
       '/signin': (context) => SignIn(),
+      '/form': (context) => FormScreen(),
+      '/bill': (context) => Bill(),
      
     },
     ));
