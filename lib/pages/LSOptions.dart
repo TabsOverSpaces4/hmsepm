@@ -80,7 +80,7 @@ class _HomeState extends State<Login> {
                     Navigator.pushNamed(context, '/book');
                   },
                   child: Text(
-                    "     Bookings     ",
+                    "     Browse     ",
                     style: TextStyle(fontSize: 20, color: Colors.white),
                   ),
                   shape: RoundedRectangleBorder(
@@ -103,7 +103,7 @@ class _HomeState extends State<Login> {
                     Navigator.pushNamed(context, '/signin');
                   },
                   child: Text(
-                    "     Track with your booking ID     ",
+                    "     Bookings     ",
                     style: TextStyle(fontSize: 20, color: Colors.white),
                   ),
                   shape: RoundedRectangleBorder(
