@@ -142,7 +142,7 @@ class Bill extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 300.0),
+            SizedBox(height: 200.0),
             Center(
               child: Center(
                 child: Row(
