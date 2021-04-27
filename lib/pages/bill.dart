@@ -120,6 +120,28 @@ class Bill extends StatelessWidget {
                 ),
               ),
             ),
+            SizedBox(height: 30.0),
+            Center(
+              child: Text(
+                'Booking ID',
+                style: TextStyle(
+                  color: Colors.grey,
+                  letterSpacing: 2.0,
+                ),
+              ),
+            ),
+            SizedBox(height: 10.0),
+            Center(
+              child: Text(
+                'RRO001',
+                style: TextStyle(
+                  color: Colors.teal[400],
+                  fontWeight: FontWeight.bold,
+                  fontSize: 28.0,
+                  letterSpacing: 2.0,
+                ),
+              ),
+            ),
             SizedBox(height: 300.0),
             Center(
               child: Center(
