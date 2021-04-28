@@ -111,7 +111,7 @@ class Bill extends StatelessWidget {
             SizedBox(height: 10.0),
             Center(
               child: Text(
-                'Rs. 18,000 Only',
+                'Rs. 28,000 Only',
                 style: TextStyle(
                   color: Colors.teal[400],
                   fontWeight: FontWeight.bold,

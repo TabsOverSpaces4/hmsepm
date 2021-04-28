@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hmsepm/pages/LSOptions.dart';
 import 'package:hmsepm/pages/bill.dart';
 
 void main() => runApp(new FormScreen());
