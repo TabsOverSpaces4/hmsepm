@@ -29,7 +29,7 @@ class _TravelAppState extends State<Book> {
   ];
 
   int _currentIndex = 0;
-  int _counter = 0;
+
 
   @override
   Widget build(BuildContext context) {
@@ -151,9 +151,9 @@ class _TravelAppState extends State<Book> {
                                 travelCard(
                                     urls[1], "Indian cousin", "37 Dishes", 5),
                                 travelCard(
-                                    urls[3], "Chinese cousin", "28 Dishes", 5),
+                                    urls[3], "Chinese cousin", "28 Dishes", 3),
                                 travelCard(
-                                    urls[4], "Italian cousin", "52 Dishes", 5),
+                                    urls[4], "Italian cousin", "52 Dishes", 4),
                               ],
                             ),
                           ),

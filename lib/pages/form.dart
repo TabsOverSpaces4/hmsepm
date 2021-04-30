@@ -7,7 +7,7 @@ class FormScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-      title: 'Bookings',
+      title: 'Bookings form',
       theme: new ThemeData(
         primarySwatch: Colors.teal,
       ),

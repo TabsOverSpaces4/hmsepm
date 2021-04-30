@@ -67,7 +67,7 @@ class Bill extends StatelessWidget {
             SizedBox(height: 10.0),
             Center(
               child: Text(
-                '5-3-21 to 8-3-21',
+                '6-3-21 to 9-3-21',
                 style: TextStyle(
                   color: Colors.teal[400],
                   fontWeight: FontWeight.bold,
