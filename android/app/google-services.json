@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "388629005712",
+    "project_id": "hms-projectt",
+    "storage_bucket": "hms-projectt.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:388629005712:android:456e866a8d8c04e88cdf15",
+        "android_client_info": {
+          "package_name": "com.example.hmsepm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "388629005712-mgkdbj74g910gv5nt0nugkqak5dq33vu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXwqNIg-8lqozJp1vh7hLRps7x3C2L-zc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "388629005712-mgkdbj74g910gv5nt0nugkqak5dq33vu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
