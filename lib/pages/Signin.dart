@@ -122,7 +122,7 @@ class SignIn extends StatelessWidget {
                     ),
                     child: FlatButton(
                       child: Text(
-                        "Haven't booked yet? Click here to book now !",
+                        "Haven't booked yet? Click here to book now!",
                         style: TextStyle(color: Colors.grey),
                       ),
                       onPressed: () {
