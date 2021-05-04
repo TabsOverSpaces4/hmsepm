@@ -65,7 +65,7 @@ class _LoadingState extends State<Loading> {
                                 FlatButton(
                                   child: Center(
                                     child: Text(
-                                      "tap here to return to the HMS app \n Go back again to exit the app",
+                                      "tap here to return to the HMS app \n Press back again to exit the app",
                                       style: TextStyle(color: Colors.grey),
                                     ),
                                   ),
