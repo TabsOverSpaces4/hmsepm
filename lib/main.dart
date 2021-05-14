@@ -20,7 +20,7 @@ void main() => runApp(MaterialApp(initialRoute: '/login', routes: {
       '/signin': (context) => SignIn(),
       '/form': (context) => FormScreen(),
       '/bill': (context) => Bill(),
-      '/signup': (context) => SignUp(),
+      '/signup': (context) => SignupPage(),
      
     },
     ));

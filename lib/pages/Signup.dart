@@ -1,20 +1,106 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:hmsepm/Widgets/CustomInput.dart';
+import 'package:hmsepm/Widgets/custom_button.dart';
 
 
-class MyApp extends StatelessWidget {
+class SignupPage extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: SignUp(),
-    );
-  }
+  _SignupPageState createState() => _SignupPageState();
 }
 
-class SignUp extends StatelessWidget {
+class _SignupPageState extends State<SignupPage> {
   @override
+  Future<void> _alertDialogBuilder(String error) async {
+    return showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (context) {
+          return AlertDialog(
+            title: Text("Error!"),
+            content: Container(
+              child: Text(error),
+            ),
+            actions: [
+              TextButton(
+                child: Text("Close"),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              )
+            ],
+          );
+        });
+  }
+
+  void _submitForm() async {
+    // Set the form to loading state
+    setState(() {
+      _registerformLoading = true;
+    });
+
+    String _createAccountFeedback = await _createAccount();
+    if (_createAccountFeedback != null) {
+      _alertDialogBuilder(_createAccountFeedback);
+
+      setState(() {
+        _registerformLoading = false;
+      });
+    } else {
+      //Sign in was successful and the user was routed towards the homescreen using pop funciton
+      Navigator.pop(context);
+    }
+  }
+
+  // Create a new user account
+  Future<String> _createAccount() async {
+    try {
+      await FirebaseAuth.instance.createUserWithEmailAndPassword(
+          email: _registerEmail, password: _registerPassword);
+      return null;
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'weak-password') {
+        return 'The password provided is too weak.';
+      } else if (e.code == 'email-already-in-use') {
+        return 'The account already exists for that email.';
+      }
+      return e.message;
+    } catch (e) {
+      return e.toString();
+    }
+  }
+
+  //Default Form Loading State
+  bool _registerformLoading = false;
+
+  //Form input field Values
+  String _registerEmail = "";
+  String _registerPassword = "";
+
+  // Focus Node for the input fields
+  FocusNode _passwordFocusNode;
+
+  @override
+  void initState() {
+    _passwordFocusNode = FocusNode();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _passwordFocusNode.dispose();
+    super.dispose();
+  }
+
+
+
   Widget build(BuildContext context) {
+    return MaterialApp(
+      home: SignupPage(),
+    );
+
     final deviceWidth = MediaQuery.of(context).size.height;
     final deviceHorizontal = MediaQuery.of(context).size.width;
     return SafeArea(
@@ -45,7 +131,7 @@ class SignUp extends StatelessWidget {
                         ),
                         SizedBox(height: deviceWidth * .01),
                         Text(
-                          "Sign In",
+                          "Sign Up",
                           style: TextStyle(
                               fontSize: deviceWidth / 32, color: Colors.white),
                         ),
@@ -67,24 +153,36 @@ class SignUp extends StatelessWidget {
                         top: deviceWidth * .025),
                     child: Column(
                       children: [
-                        TextFormField(
-                          decoration: InputDecoration(
-                            labelText: "Booking ID",
-                            hintText: "ROFLMAO123",
-                            suffixIcon: Icon(Icons.email_outlined),
-                          ),
-                        ),
-                        SizedBox(height: deviceWidth * .01),
-                        TextFormField(
-                          obscureText: true,
-                          decoration: InputDecoration(
-                              labelText: "Password",
-                              hintText:
-                                  "Password is the Check-in Date in the format: DD-MM-YYYY",
-                              suffixIcon: Icon(Icons.remove_red_eye_outlined)),
-                        ),
-                        SizedBox(height: deviceWidth * .01),
-                      ],
+              CustomInpt(
+                hintText: "Email...",
+                onChanged: (value) {
+                  _registerEmail = value;
+                },
+                onSubmitted: (value) {
+                  _passwordFocusNode.requestFocus();
+                },
+                textInputAction: TextInputAction.next,
+              ),
+              CustomInpt(
+                hintText: "Password...",
+                onChanged: (value) {
+                  _registerPassword = value;
+                },
+                focusNode: _passwordFocusNode,
+                isPasswordField: true,
+                onSubmitted: (value) {
+                  _submitForm();
+                },
+              ),
+              Custombtn(
+                text: "Create Account",
+                onPressed: () {
+                  _submitForm();
+                },
+                outlineBtn: false,
+                isLoading: _registerformLoading,
+              )
+            ],
                     ),
                   ),
                 ),
@@ -97,7 +195,7 @@ class SignUp extends StatelessWidget {
                   width: deviceHorizontal * .8,
                   child: RaisedButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, '/bill');
+                      Navigator.pushNamed(context, '/form');
                     },
                     child: Text(
                       "Sign In",
@@ -113,7 +211,7 @@ class SignUp extends StatelessWidget {
                     margin: EdgeInsets.only(
                       top: deviceWidth * .68,
                     ),
-                    child: FlatButton(
+                    child: TextButton(
                       child: Text(
                         "Don't have an account? Create on here...",
                         style: TextStyle(color: Colors.grey),
