@@ -95,16 +95,12 @@ class _SignupPageState extends State<SignupPage> {
   }
 
 
-
+  @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: SignupPage(),
-    );
-
     final deviceWidth = MediaQuery.of(context).size.height;
     final deviceHorizontal = MediaQuery.of(context).size.width;
-    return SafeArea(
-      child: Scaffold(
+
+    return Scaffold(
           backgroundColor: Colors.blueGrey[900],
           body: ListView(children: [
             Stack(
@@ -138,19 +134,6 @@ class _SignupPageState extends State<SignupPage> {
                       ],
                     )),
                 Container(
-                  margin: EdgeInsets.only(
-                      top: deviceWidth * .32, left: deviceWidth * .02),
-                  height: deviceWidth * .3,
-                  width: MediaQuery.of(context).size.width * .9,
-                  decoration: BoxDecoration(
-                    color: Colors.grey[300],
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: Padding(
-                    padding: EdgeInsets.only(
-                        left: deviceHorizontal * .1,
-                        right: deviceHorizontal * .1,
-                        top: deviceWidth * .025),
                     child: Column(
                       children: [
               CustomInpt(
@@ -185,7 +168,7 @@ class _SignupPageState extends State<SignupPage> {
             ],
                     ),
                   ),
-                ),
+               ] ),
                 Container(
                   margin: EdgeInsets.only(
                       top: deviceWidth * .58,
@@ -222,14 +205,8 @@ class _SignupPageState extends State<SignupPage> {
                     )),
               ],
             ),
-          ]),
-          floatingActionButton: FloatingActionButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            child: const Icon(Icons.arrow_back_ios_outlined),
-            backgroundColor: Colors.teal[400],
-          )),
-    );
+          );
+          
+    
   }
 }
