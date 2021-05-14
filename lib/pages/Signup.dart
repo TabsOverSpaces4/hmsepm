@@ -103,7 +103,7 @@ class _SignupPageState extends State<SignupPage> {
     return Scaffold(
           backgroundColor: Colors.blueGrey[900],
           body: ListView(children: [
-            Stack(
+            Column(
               children: [
                 Container(
                     height: deviceWidth * .4,
@@ -133,6 +133,7 @@ class _SignupPageState extends State<SignupPage> {
                         ),
                       ],
                     )),
+                    SizedBox(height: deviceWidth * .01),
                 Container(
                     child: Column(
                       children: [
@@ -146,6 +147,7 @@ class _SignupPageState extends State<SignupPage> {
                 },
                 textInputAction: TextInputAction.next,
               ),
+              SizedBox(height: deviceWidth * .01),
               CustomInpt(
                 hintText: "Password...",
                 onChanged: (value) {
@@ -162,7 +164,7 @@ class _SignupPageState extends State<SignupPage> {
                 onPressed: () {
                   _submitForm();
                 },
-                outlineBtn: false,
+                outlineBtn: true,
                 isLoading: _registerformLoading,
               )
             ],
@@ -205,6 +207,13 @@ class _SignupPageState extends State<SignupPage> {
                     )),
               ],
             ),
+            floatingActionButton: FloatingActionButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            child: const Icon(Icons.arrow_back_ios_outlined),
+            backgroundColor: Colors.teal[400],
+          )
           );
           
     

@@ -70,26 +70,7 @@ class _HomeState extends State<Login> {
                 SizedBox(
                   height: 20.0,
                 ),
-                FadeAnimation(
-                  1,
-                  Container(
-                    height: 50,
-                    margin: EdgeInsets.symmetric(horizontal: 10),
-                child: RaisedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/book');
-                  },
-                  child: Text(
-                    "     Browse     ",
-                    style: TextStyle(fontSize: 20, color: Colors.white),
-                  ),
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30)),
-                  color: Colors.teal[400],
-                ),
-              ),
-                ),
-                
+               
                 SizedBox(
                   height: 20.0,
                 ),
