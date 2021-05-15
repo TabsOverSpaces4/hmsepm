@@ -183,7 +183,7 @@ class _SignupPageState extends State<SignupPage> {
                       Navigator.pushNamed(context, '/form');
                     },
                     child: Text(
-                      "Sign In",
+                      "Sign Up",
                       style: TextStyle(fontSize: 20, color: Colors.white),
                     ),
                     shape: RoundedRectangleBorder(
@@ -198,11 +198,11 @@ class _SignupPageState extends State<SignupPage> {
                     ),
                     child: TextButton(
                       child: Text(
-                        "Don't have an account? Create on here...",
+                        "Already have an account? SignIn here",
                         style: TextStyle(color: Colors.grey),
                       ),
                       onPressed: () {
-                        Navigator.pushNamed(context, '/form');
+                        Navigator.pushNamed(context, '/signin');
                       },
                     )),
               ],

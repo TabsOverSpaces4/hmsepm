@@ -41,7 +41,7 @@ class Landingpage extends StatelessWidget {
                 User _user = streamSnapshot.data;
 
                 if (_user == null) {
-                  return SignIn();
+                  return Loginpage();
                 } else {
                   return Book();
                 }

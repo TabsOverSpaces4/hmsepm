@@ -2,6 +2,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:hmsepm/Widgets/CustomInput.dart';
+import 'package:hmsepm/Widgets/custom_button.dart';
+import 'package:hmsepm/pages/Signup.dart';
 
 
 class Loginpage extends StatefulWidget {
@@ -135,77 +138,53 @@ class _LoginpageState extends State<Loginpage> {
                       ],
                     )),
                 Container(
-                  margin: EdgeInsets.only(
-                      top: deviceWidth * .32, left: deviceWidth * .02),
-                  height: deviceWidth * .3,
-                  width: MediaQuery.of(context).size.width * .9,
-                  decoration: BoxDecoration(
-                    color: Colors.grey[300],
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: Padding(
-                    padding: EdgeInsets.only(
-                        left: deviceHorizontal * .1,
-                        right: deviceHorizontal * .1,
-                        top: deviceWidth * .025),
+                 
                     child: Column(
-                      children: [
-                        TextFormField(
-                          decoration: InputDecoration(
-                            labelText: "Booking ID",
-                            hintText: "ROFLMAO123",
-                            suffixIcon: Icon(Icons.email_outlined),
-                          ),
-                        ),
-                        SizedBox(height: deviceWidth * .01),
-                        TextFormField(
-                          obscureText: true,
-                          decoration: InputDecoration(
-                              labelText: "Password",
-                              hintText:
-                                  "Password is the Check-in Date in the format: DD-MM-YYYY",
-                              suffixIcon: Icon(Icons.remove_red_eye_outlined)),
-                        ),
-                        SizedBox(height: deviceWidth * .01),
-                      ],
-                    ),
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.only(
-                      top: deviceWidth * .58,
-                      left: deviceHorizontal * .2,
-                      right: deviceHorizontal * .2),
-                  height: deviceWidth * .08,
-                  width: deviceHorizontal * .8,
-                  child: RaisedButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/bill');
+            children: [
+              CustomInpt(
+                    hintText: "Email...",
+                    onChanged: (value) {
+                      _loginEmail = value;
                     },
-                    child: Text(
-                      "Sign In",
-                      style: TextStyle(fontSize: 20, color: Colors.white),
-                    ),
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30)),
-                    color: Colors.teal[400],
+                    onSubmitted: (value) {
+                      _passwordFocusNode.requestFocus();
+                    },
+                    textInputAction: TextInputAction.next,
                   ),
-                ),
-                Container(
-                    alignment: Alignment.center,
-                    margin: EdgeInsets.only(
-                      top: deviceWidth * .68,
-                    ),
-                    child: FlatButton(
-                      child: Text(
-                        "Don't have an account? Create on here...",
-                        style: TextStyle(color: Colors.grey),
-                      ),
-                      onPressed: () {
-                        Navigator.pushNamed(context, '/signup');
-                      },
-                    )),
-              ],
+              CustomInpt(
+                    hintText: "Password...",
+                    onChanged: (value) {
+                      _loginPassword = value;
+                    },
+                    focusNode: _passwordFocusNode,
+                    isPasswordField: true,
+                    onSubmitted: (value) {
+                      _submitForm();
+                    },
+                  ),
+                    Custombtn(
+                    text: "Login",
+                    onPressed: () {
+                      _submitForm();
+                    },
+                    isLoading: _loginFormLoading,
+                  )
+                ],
+              ),
+           Padding(
+            padding: const EdgeInsets.only(bottom: 16.0),
+            child: Custombtn(
+              text: "Don't have an account? SignUp here",
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SignupPage()));
+              },
+              outlineBtn: true,
+            ),
+          ),
+                  
+      ),
+                ],
             ),
           ]),
           floatingActionButton: FloatingActionButton(
