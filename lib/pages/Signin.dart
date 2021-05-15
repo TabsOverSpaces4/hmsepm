@@ -1,18 +1,101 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 
-class MyApp extends StatelessWidget {
+class Loginpage extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: SignIn(),
-    );
-  }
+  _LoginpageState createState() => _LoginpageState();
 }
 
-class SignIn extends StatelessWidget {
+class _LoginpageState extends State<Loginpage> {
+
+  Future<void> _alertDialogBuilder(String error) async {
+    return showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (context) {
+          return AlertDialog(
+            title: Text("Error"),
+            content: Container(
+              child: Text(error),
+            ),
+            actions: [
+              TextButton(
+                child: Text("Close Dialog"),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              )
+            ],
+          );
+        }
+    );
+  }
+
+  // Create a new user account
+  Future<String> _loginAccount() async {
+    try {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+          email: _loginEmail, password: _loginPassword);
+      return null;
+    } on FirebaseAuthException catch(e) {
+      if (e.code == 'weak-password') {
+        return 'The password provided is too weak.';
+      } else if (e.code == 'email-already-in-use') {
+        return 'The account already exists for that email.';
+      }
+      return e.message;
+    } catch (e) {
+      return e.toString();
+    }
+  }
+
+  void _submitForm() async {
+    // Set the form to loading state
+    setState(() {
+      _loginFormLoading = true;
+    });
+
+    // Run the create account method
+    String _loginFeedback = await _loginAccount();
+
+    // If the string is not null, we got error while create account.
+    if(_loginFeedback != null) {
+      _alertDialogBuilder(_loginFeedback);
+
+      // Set the form to regular state [not loading].
+      setState(() {
+        _loginFormLoading = false;
+      });
+    }
+  }
+
+  // Default Form Loading State
+  bool _loginFormLoading = false;
+
+  // Form Input Field Values
+  String _loginEmail = "";
+  String _loginPassword = "";
+
+  // Focus Node for input fields
+  FocusNode _passwordFocusNode;
+
+
+  @override
+  void initState() {
+    _passwordFocusNode = FocusNode();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _passwordFocusNode.dispose();
+    super.dispose();
+  }
+
+
   @override
   Widget build(BuildContext context) {
     final deviceWidth = MediaQuery.of(context).size.height;
@@ -135,3 +218,4 @@ class SignIn extends StatelessWidget {
     );
   }
 }
+  
