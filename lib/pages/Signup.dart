@@ -164,7 +164,7 @@ class _SignupPageState extends State<SignupPage> {
                 onPressed: () {
                   _submitForm();
                 },
-                outlineBtn: true,
+                
                 isLoading: _registerformLoading,
               )
             ],
