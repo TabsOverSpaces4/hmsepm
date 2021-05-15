@@ -99,11 +99,12 @@ class _LoginpageState extends State<Loginpage> {
   }
 
 
+
   @override
   Widget build(BuildContext context) {
     final deviceWidth = MediaQuery.of(context).size.height;
     final deviceHorizontal = MediaQuery.of(context).size.width;
-    
+
     return Scaffold(
           backgroundColor: Colors.blueGrey[900],
           body: ListView(children: [
@@ -174,13 +175,21 @@ class _LoginpageState extends State<Loginpage> {
                     isLoading: _loginFormLoading,
                   ),
                   SizedBox(height: deviceWidth * .01),
-                    Custombtn(
-                    text: "New user? Sign up here...",
-                    onPressed: () {
-                     Navigator.pushNamed(context, '/SignupPage');
-                    },
+                  //   Custombtn(
+                  //   text: "New user? Sign up here...",
+                  //   onPressed: () {
+                  //    Navigator.pushNamed(context, '/SignupPage');
+                  //   },
                     
-                  )
+                  // ),
+                  Custombtn(
+              text: "Don't have an account? SignUp here",
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SignupPage()));
+              },
+              outlineBtn: true,
+            ),
                 ],
               ),
           //  Padding(
