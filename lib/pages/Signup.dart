@@ -1,7 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:hmsepm/Widgets/CustomInput.dart';
 import 'package:hmsepm/Widgets/custom_button.dart';
 
@@ -133,7 +132,7 @@ class _SignupPageState extends State<SignupPage> {
                         ),
                       ],
                     )),
-                    SizedBox(height: deviceWidth * .01),
+                    SizedBox(height: deviceWidth * .02),
                 Container(
                     child: Column(
                       children: [
@@ -159,6 +158,7 @@ class _SignupPageState extends State<SignupPage> {
                   _submitForm();
                 },
               ),
+              SizedBox(height: deviceWidth * .01),
               Custombtn(
                 text: "Create Account",
                 onPressed: () {
