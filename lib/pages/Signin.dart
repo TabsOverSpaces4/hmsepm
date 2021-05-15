@@ -107,7 +107,7 @@ class _LoginpageState extends State<Loginpage> {
       child: Scaffold(
           backgroundColor: Colors.blueGrey[900],
           body: ListView(children: [
-            Stack(
+            Column(
               children: [
                 Container(
                     height: deviceWidth * .4,
@@ -137,6 +137,7 @@ class _LoginpageState extends State<Loginpage> {
                         ),
                       ],
                     )),
+                    SizedBox(height: deviceWidth * .01),
                 Container(
                  
                     child: Column(
@@ -151,6 +152,8 @@ class _LoginpageState extends State<Loginpage> {
                     },
                     textInputAction: TextInputAction.next,
                   ),
+                  SizedBox(height: deviceWidth * .01),
+
               CustomInpt(
                     hintText: "Password...",
                     onChanged: (value) {
@@ -162,26 +165,35 @@ class _LoginpageState extends State<Loginpage> {
                       _submitForm();
                     },
                   ),
+                  SizedBox(height: deviceWidth * .01),
                     Custombtn(
                     text: "Login",
                     onPressed: () {
                       _submitForm();
                     },
                     isLoading: _loginFormLoading,
+                  ),
+                  SizedBox(height: deviceWidth * .01),
+                    Custombtn(
+                    text: "New user? Sign up here...",
+                    onPressed: () {
+                     Navigator.pushNamed(context, '/Sign');
+                    },
+                    isLoading: _loginFormLoading,
                   )
                 ],
               ),
-           Padding(
-            padding: const EdgeInsets.only(bottom: 16.0),
-            child: Custombtn(
-              text: "Don't have an account? SignUp here",
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => SignupPage()));
-              },
-              outlineBtn: true,
-            ),
-          ),
+          //  Padding(
+          //   padding: const EdgeInsets.only(bottom: 16.0),
+          //   child: Custombtn(
+          //     text: "Don't have an account? SignUp here",
+          //     onPressed: () {
+          //       Navigator.push(context,
+          //           MaterialPageRoute(builder: (context) => SignupPage()));
+          //     },
+          //     outlineBtn: true,
+          //   ),
+          // ),
                   
       ),
                 ],

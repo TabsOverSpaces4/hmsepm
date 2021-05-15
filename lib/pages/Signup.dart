@@ -180,7 +180,7 @@ class _SignupPageState extends State<SignupPage> {
                   width: deviceHorizontal * .8,
                   child: RaisedButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, '/form');
+                      Navigator.pushNamed(context, '/signup');
                     },
                     child: Text(
                       "Sign Up",
