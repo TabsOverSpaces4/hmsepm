@@ -103,8 +103,8 @@ class _LoginpageState extends State<Loginpage> {
   Widget build(BuildContext context) {
     final deviceWidth = MediaQuery.of(context).size.height;
     final deviceHorizontal = MediaQuery.of(context).size.width;
-    return SafeArea(
-      child: Scaffold(
+    
+    return Scaffold(
           backgroundColor: Colors.blueGrey[900],
           body: ListView(children: [
             Column(
@@ -177,9 +177,9 @@ class _LoginpageState extends State<Loginpage> {
                     Custombtn(
                     text: "New user? Sign up here...",
                     onPressed: () {
-                     Navigator.pushNamed(context, '/Sign');
+                     Navigator.pushNamed(context, '/SignupPage');
                     },
-                    isLoading: _loginFormLoading,
+                    
                   )
                 ],
               ),
@@ -205,7 +205,7 @@ class _LoginpageState extends State<Loginpage> {
             },
             child: const Icon(Icons.arrow_back_ios_outlined),
             backgroundColor: Colors.teal[400],
-          )),
+          ),
     );
   }
 }
