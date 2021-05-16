@@ -35,7 +35,7 @@ class Bill extends StatelessWidget {
             ),
             Center(
               child: Text(
-                'NAME',
+                'Name',
                 style: TextStyle(
                   color: Colors.grey,
                   letterSpacing: 2.0,

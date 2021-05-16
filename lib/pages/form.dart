@@ -120,7 +120,7 @@ class _MyHomePageState extends State<MyHomePage> {
         isActive: _currentStep >= 3,
       ),
       Step(
-        title: Text('Any personal ID number'),
+        title: Text('Any PID number'),
         content: TextField(),
         isActive: _currentStep >= 4,
       ),

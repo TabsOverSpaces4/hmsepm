@@ -151,7 +151,7 @@ class _TravelAppState extends State<Book> {
                                 travelCard(
                                     urls[1], "Indian cousin", "37 Dishes", 5),
                                 travelCard(
-                                    urls[3], "Chinese cousin", "28 Dishes", 3),
+                                    urls[3], "Chinese cousin", "38 Dishes", 3),
                                 travelCard(
                                     urls[4], "Italian cousin", "52 Dishes", 4),
                               ],

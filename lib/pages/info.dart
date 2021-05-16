@@ -18,7 +18,7 @@ class _NinjaCardState extends State<Info> {
     return Scaffold(
       backgroundColor: Colors.blueGrey[900],
       appBar: AppBar(
-        title: Text('About Us'),
+        title: Text('About us'),
         centerTitle: true,
         backgroundColor: Colors.blueGrey[900],
         elevation: 0.0,
