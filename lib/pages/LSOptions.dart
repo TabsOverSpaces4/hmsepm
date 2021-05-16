@@ -107,7 +107,7 @@ class _HomeState extends State<Login> {
                       color: Colors.teal[400],
                     ),
                     child: Center(
-                        child: FlatButton(
+                        child: TextButton(
                       onPressed: () {
                         Navigator.pushNamed(context, '/gallery');
                       },
