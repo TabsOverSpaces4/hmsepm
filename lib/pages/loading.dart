@@ -62,10 +62,10 @@ class _LoadingState extends State<Loading> {
                                 SizedBox(
                                   height: 40.0,
                                 ),
-                                FlatButton(
+                                TextButton(
                                   child: Center(
                                     child: Text(
-                                      "tap here to return to the HMS app \n Press back again to exit the app",
+                                      "tap Here to return to the HMS app \n Press back again to exit the app",
                                       style: TextStyle(color: Colors.grey),
                                     ),
                                   ),
