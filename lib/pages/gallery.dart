@@ -48,6 +48,7 @@ class CarouselDemoState extends State<Gallery> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
+            //Slider
             carouselSlider = CarouselSlider(
               height: 400.0,
               initialPage: 0,
