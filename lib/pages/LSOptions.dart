@@ -112,7 +112,7 @@ class _HomeState extends State<Login> {
                         Navigator.pushNamed(context, '/gallery');
                       },
                       child: Text(
-                        "Gallery",
+                        "  Gallery  ",
                         style: TextStyle(color: Colors.white),
                       ),
                     )),

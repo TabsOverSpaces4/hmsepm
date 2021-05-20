@@ -65,7 +65,7 @@ class Landingpage extends StatelessWidget {
           body: Container(
               child: Center(
             child: Text(
-              "Initializing app",
+              "Initializing App",
               style: Constants.regularHeading,
             ),
           )),
