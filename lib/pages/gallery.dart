@@ -4,7 +4,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 class Gallery extends StatefulWidget {
   Gallery() : super();
  
-  final String title = "Carousel Demo";
+  final String title = "Gallery";
  
   @override
   CarouselDemoState createState() => CarouselDemoState();
