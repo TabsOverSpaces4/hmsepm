@@ -143,7 +143,7 @@ class _LoginpageState extends State<Loginpage> {
                     child: Column(
             children: [
               CustomInpt(
-                    hintText: "Email...",
+                    hintText: "Email..",
                     onChanged: (value) {
                       _loginEmail = value;
                     },
@@ -155,7 +155,7 @@ class _LoginpageState extends State<Loginpage> {
                   SizedBox(height: deviceWidth * .01),
 
               CustomInpt(
-                    hintText: "Password...",
+                    hintText: "Password..",
                     onChanged: (value) {
                       _loginPassword = value;
                     },
