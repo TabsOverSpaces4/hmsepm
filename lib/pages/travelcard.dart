@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hmsepm/pages/bill.dart';
 
 Widget travelCard(
     String imgUrl, String hotelName, String location, int rating) {
@@ -9,12 +10,11 @@ Widget travelCard(
       borderRadius: BorderRadius.circular(30.0),
     ),
     elevation: 0.0,
-    child: InkWell(
-      onTap: () {
-        print("Selected");
-      },
-        
-      
+    // child: GestureDetector(
+    //   onTap: () {
+    //     BuildContext context;
+    //             Navigator.push(context, MaterialPageRoute(builder: (context) => Bill()));
+    //   },
       child: Container(
         decoration: BoxDecoration(
             image: DecorationImage(
@@ -69,6 +69,7 @@ Widget travelCard(
           ),
         ),
       ),
-    ),
-  );
+    );
+    
+  
 }

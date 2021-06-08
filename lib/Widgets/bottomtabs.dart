@@ -38,14 +38,14 @@ class _BtmtabsState extends State<Btmtabs> {
               },
             ),
             BtmtabBtn(
-              imagePath: "lib/Assets/images/tab_saved.png",
+              imagePath: "lib/assets/images/tab_saved.png",
               selected: _selectedTab == 2 ? true : false,
               onPressed: () {
                 widget.tabPressed(2);
               },
             ),
             BtmtabBtn(
-              imagePath: "lib/Assets/images/tab_logout.png",
+              imagePath: "lib/assets/images/tab_logout.png",
               selected: _selectedTab == 3 ? true : false,
               onPressed: () {
                 FirebaseAuth.instance.signOut();

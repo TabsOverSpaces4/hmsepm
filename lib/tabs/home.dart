@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:hmsepm/pages/bill.dart';
 import 'package:hmsepm/pages/travelcard.dart';
 
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-   
   ));
 }
 
@@ -117,24 +117,29 @@ class _TravelAppState extends State<HomeTab> {
                         child: TabBarView(
                           children: [
                             //Now let's create our first tab page
-                            Container(
-                              child: ListView(
-                                scrollDirection: Axis.horizontal,
-                                children: [
-                                  //Now let's add and test our first card
-                                  travelCard(
-                                    urls[0],
-                                    "Single Bed",
-                                    "Capacity: 1",
-                                    3,
-                                  ),
+                            GestureDetector(
+                              child: Container(
+                                child: ListView(
+                                  scrollDirection: Axis.horizontal,
+                                  children: [
+                                    //Now let's add and test our first card
+                                    travelCard(
+                                      urls[0],
+                                      "Single Bed",
+                                      "Capacity: 1",
+                                      3,
+                                    ),
 
-                                  travelCard(
-                                      urls[2], "Double Bed", "Capacity: 2", 4),
-                                  travelCard(urls[5], "Founders Suite",
-                                      "Capacity: 4", 5),
-                                ],
+                                    travelCard(urls[2], "Double Bed",
+                                        "Capacity: 2", 4),
+                                    travelCard(urls[5], "Founders Suite",
+                                        "Capacity: 4", 5),
+                                  ],
+                                ),
                               ),
+                              onTap: () {
+                                Navigator.pushNamed(context, '/bill');
+                              },
                             ),
                             Container(
                               child: ListView(
