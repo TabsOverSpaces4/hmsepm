@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:hmsepm/pages/travelcard.dart';
-import 'package:bottom_navy_bar/bottom_navy_bar.dart';
+import 'package:hmsepm/Widgets/bottomtabs.dart';
 
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: Book(),
+    
   ));
 }
 
@@ -27,153 +27,48 @@ class _TravelAppState extends State<Book> {
     "https://images.unsplash.com/photo-1549366021-9f761d450615?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8d2lsZGxpZmV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
     "https://lp-cms-production.imgix.net/features/2018/06/byrsa-hill-carthage-tunis-tunisia-2d96efe7b9bf.jpg"
   ];
-
-  int _currentIndex = 0;
-
+  PageController _tabsPageController;
+  int _selectedTab = 0;
+  @override
+  void dispose() {
+    _tabsPageController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueGrey[900],
-      appBar: AppBar(
-        elevation: 0.0,
-        backgroundColor: Colors.blueGrey[900],
-        title: Row(
-          children: [],
+        body: Column(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Container(
+            child: Expanded(
+          child: PageView(
+            controller: _tabsPageController,
+            onPageChanged: (num) {
+              setState(() {
+                _selectedTab = num;
+              });
+            },
+            children: [
+              HomeTab(),
+              Searchtab(),
+              Savedtab(),
+              Profiletab(),
+            ],
+          ),
+        )),
+        Btmtabs(
+          selectedTab: _selectedTab,
+          tabPressed: (num) {
+            setState(() {
+              _tabsPageController.animateToPage(num,
+                  duration: Duration(milliseconds: 300),
+                  curve: Curves.easeOutCubic);
+            });
+          },
         ),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 24.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              "Welcome to HMS",
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 26.0,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-            Text(
-              "Pick from our vast selections of rooms",
-              style: TextStyle(
-                color: Colors.teal[400],
-                fontSize: 20.0,
-                fontWeight: FontWeight.w300,
-              ),
-            ),
-            SizedBox(
-              height: 20.0,
-            ),
-            Material(
-              elevation: 10.0,
-              borderRadius: BorderRadius.circular(30.0),
-              shadowColor: Color(0x55434343),
-              child: TextField(
-                textAlign: TextAlign.start,
-                textAlignVertical: TextAlignVertical.center,
-                decoration: InputDecoration(
-                  hintText: "Or, search for it...",
-                  prefixIcon: Icon(
-                    Icons.search,
-                    color: Colors.teal[400],
-                  ),
-                  border: InputBorder.none,
-                ),
-              ),
-            ),
-            SizedBox(height: 30.0),
-            DefaultTabController(
-              length: 3,
-              child: Expanded(
-                child: Column(
-                  children: [
-                    TabBar(
-                      indicatorColor: Colors.teal[400],
-                      unselectedLabelColor: Colors.grey[350],
-                      labelColor: Colors.teal[400],
-                      labelPadding: EdgeInsets.symmetric(horizontal: 8.0),
-                      tabs: [
-                        Tab(
-                          text: "Configurations",
-                        ),
-                        Tab(
-                          text: "Tourism",
-                        ),
-                        Tab(
-                          text: "Toast & Tonic",
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 20.0,
-                    ),
-                    Container(
-                      height: 300.0,
-                      child: TabBarView(
-                        children: [
-                          //Now let's create our first tab page
-                          Container(
-                            child: ListView(
-                              scrollDirection: Axis.horizontal,
-                              children: [
-                                //Now let's add and test our first card
-                                travelCard(
-                                  urls[0],
-                                  "Single Bed",
-                                  "Capacity: 1",
-                                  3,
-                                ),
-
-                                travelCard(
-                                    urls[2], "Double Bed", "Capacity: 2", 4),
-                                travelCard(urls[5], "Founders Suite",
-                                    "Capacity: 4", 5),
-                              ],
-                            ),
-                          ),
-                          Container(
-                            child: ListView(
-                              scrollDirection: Axis.horizontal,
-                              children: [
-                                travelCard(urls[6], "Visit Kodai", "37Kms", 4),
-                                travelCard(urls[8],
-                                    "bannerghatta national park", "12kms", 4),
-                              ],
-                            ),
-                          ),
-                          Container(
-                            child: ListView(
-                              scrollDirection: Axis.horizontal,
-                              children: [
-                                travelCard(
-                                    urls[1], "Indian cousin", "37 Dishes", 5),
-                                travelCard(
-                                    urls[3], "Chinese cousin", "38 Dishes", 3),
-                                travelCard(
-                                    urls[4], "Italian cousin", "42 Dishes", 4),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            )
-          ],
-        ),
-      ),
-
-    
-
-
-
-      
-      
-    );
+      ],
+    ));
   }
 }
