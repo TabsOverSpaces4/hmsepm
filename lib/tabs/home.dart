@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hmsepm/pages/travelcard.dart';
-import 'package:hmsepm/Widgets/bottomtabs.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -28,7 +27,6 @@ class _TravelAppState extends State<HomeTab> {
     "https://lp-cms-production.imgix.net/features/2018/06/byrsa-hill-carthage-tunis-tunisia-2d96efe7b9bf.jpg"
   ];
   PageController _tabsPageController;
-  int _selectedTab = 0;
   @override
   void dispose() {
     _tabsPageController.dispose();

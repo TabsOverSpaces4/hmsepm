@@ -19,17 +19,7 @@ class _BtmtabsState extends State<Btmtabs> {
     return Container(
         decoration: BoxDecoration(
             color: Colors.blueGrey[900],
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(12.0),
-              topRight: Radius.circular(12.0),
             ),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.05),
-                spreadRadius: 1.0,
-                blurRadius: 45.0,
-              )
-            ]),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
@@ -41,7 +31,7 @@ class _BtmtabsState extends State<Btmtabs> {
               },
             ),
             BtmtabBtn(
-              imagePath: "lib/Assets/images/tab_search.png",
+              imagePath: "lib/assets/images/tab_search.png",
               selected: _selectedTab == 1 ? true : false,
               onPressed: () {
                 widget.tabPressed(1);
@@ -93,7 +83,7 @@ class BtmtabBtn extends StatelessWidget {
           image: AssetImage(imagePath ?? "lib/Assets/images/tab_home.png"),
           width: 26.0,
           height: 26.0,
-          color: _selected ? Theme.of(context).accentColor : Colors.black,
+          color: _selected ? Theme.of(context).accentColor : Colors.white,
         ),
       ),
     );
