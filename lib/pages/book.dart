@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hmsepm/pages/travelcard.dart';
 import 'package:hmsepm/Widgets/bottomtabs.dart';
 import 'package:hmsepm/tabs/home.dart';
+import 'package:hmsepm/tabs/savedtab.dart';
 import 'package:hmsepm/tabs/search.dart';
 
 void main() {
@@ -55,7 +56,7 @@ class _TravelAppState extends State<Book> {
             children: [
               HomeTab(),
               SearchTab(),
-              // Savedtab(),
+              Savedtab(),
               // Profiletab(),
             ],
           ),

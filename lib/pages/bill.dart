@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hmsepm/pages/LSOptions.dart';
 
 void main() => runApp(MaterialApp(
   home: Bill(),
@@ -11,176 +10,162 @@ class Bill extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.blueGrey[900],
       appBar: AppBar(
-        title: Text('Thankyou For Choosing Us'),
+        title: Text('You have selected'),
         centerTitle: true,
         backgroundColor: Colors.teal[400],
         elevation: 0.0,
       ),
-      body: Padding(
-        padding: const EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Center(
-              child: CircleAvatar(
-                radius: 40.0,
-                backgroundImage: AssetImage(
-                            "lib/assets/images/logo.png",
-                          ),
-              ),
-            ),
-            Divider(
-              color: Colors.grey[800],
-              height: 60.0,
-            ),
-            Center(
-              child: Text(
-                'NAME',
-                style: TextStyle(
-                  color: Colors.grey,
-                  letterSpacing: 2.0,
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Center(
+                  child: CircleAvatar(
+                    radius: 80.0,
+                    backgroundImage: AssetImage(
+                                "lib/assets/images/logo.png",
+                              ),
+                  ),
                 ),
-              ),
-            ),
-            SizedBox(height: 10.0),
-            Center(
-              child: Text(
-                'Harsh Gupta',
-                style: TextStyle(
-                  color: Colors.teal[400],
-                  fontWeight: FontWeight.bold,
-                  fontSize: 28.0,
-                  letterSpacing: 2.0,
+                Divider(
+                  color: Colors.grey[800],
+                  height: 60.0,
                 ),
-              ),
-            ),
-            SizedBox(height: 30.0),
-            Center(
-              child: Text(
-                'Your Stay',
-                style: TextStyle(
-                  color: Colors.grey,
-                  letterSpacing: 2.0,
-                ),
-              ),
-            ),
-            SizedBox(height: 10.0),
-            Center(
-              child: Text(
-                '6-3-21 to 9-3-21',
-                style: TextStyle(
-                  color: Colors.teal[400],
-                  fontWeight: FontWeight.bold,
-                  fontSize: 28.0,
-                  letterSpacing: 2.0,
-                ),
-              ),
-            ),
-            SizedBox(height: 30.0),
-            Center(
-              child: Text(
-                'Room Configuration',
-                style: TextStyle(
-                  color: Colors.grey,
-                  letterSpacing: 2.0,
-                ),
-              ),
-            ),
-            SizedBox(height: 10.0),
-            Center(
-              child: Text(
-                'Founders Edition Suite',
-                style: TextStyle(
-                  color: Colors.teal[400],
-                  fontWeight: FontWeight.bold,
-                  fontSize: 28.0,
-                  letterSpacing: 2.0,
-                ),
-              ),
-            ),
-            SizedBox(height: 30.0),
-            Center(
-              child: Text(
-                'Total Cost',
-                style: TextStyle(
-                  color: Colors.grey,
-                  letterSpacing: 2.0,
-                ),
-              ),
-            ),
-            SizedBox(height: 10.0),
-            Center(
-              child: Text(
-                'Rs. 28,000 Only',
-                style: TextStyle(
-                  color: Colors.teal[400],
-                  fontWeight: FontWeight.bold,
-                  fontSize: 28.0,
-                  letterSpacing: 2.0,
-                ),
-              ),
-            ),
-            SizedBox(height: 30.0),
-            Center(
-              child: Text(
-                'Booking ID',
-                style: TextStyle(
-                  color: Colors.grey,
-                  letterSpacing: 2.0,
-                ),
-              ),
-            ),
-            SizedBox(height: 10.0),
-            Center(
-              child: Text(
-                'RRO001',
-                style: TextStyle(
-                  color: Colors.teal[400],
-                  fontWeight: FontWeight.bold,
-                  fontSize: 28.0,
-                  letterSpacing: 2.0,
-                ),
-              ),
-            ),
-            SizedBox(height: 200.0),
-            Center(
-              child: Center(
-                child: Row(
-                  children: <Widget>[
-                    Center(
-                      child: Icon(
-                        Icons.email,
-                        color: Colors.grey[400],
-                      ),
+          
+                SizedBox(height: 30.0),
+                Center(
+                  child: Text(
+                    'Room Configuration',
+                    style: TextStyle(
+                      color: Colors.grey,
+                      letterSpacing: 2.0,
                     ),
-                    SizedBox(width: 10.0),
-                    Center(
-                      child: Text(
-                        'helpwithhotel@sepm.com',
-                        style: TextStyle(
-                          color: Colors.grey[400],
-                          fontSize: 18.0,
-                          letterSpacing: 1.0,
-                        ),
-                      ),
-                    )
-                  ],
+                  ),
                 ),
-              ),
+                SizedBox(height: 10.0),
+                Center(
+                  child: Text(
+                    'Founders Edition Suite',
+                    style: TextStyle(
+                      color: Colors.teal[400],
+                      fontWeight: FontWeight.bold,
+                      fontSize: 28.0,
+                      letterSpacing: 2.0,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 30.0),
+                Center(
+                  child: Text(
+                    'Cost Per Night',
+                    style: TextStyle(
+                      color: Colors.grey,
+                      letterSpacing: 2.0,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 10.0),
+                Center(
+                  child: Text(
+                    'Rs. 12,000 Only',
+                    style: TextStyle(
+                      color: Colors.teal[400],
+                      fontWeight: FontWeight.bold,
+                      fontSize: 28.0,
+                      letterSpacing: 2.0,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 30.0),
+                Center(
+                  child: Text(
+                    'Maximum Occupancy',
+                    style: TextStyle(
+                      color: Colors.grey,
+                      letterSpacing: 2.0,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 10.0),
+                Center(
+                  child: Text(
+                    '4 Adults',
+                    style: TextStyle(
+                      color: Colors.teal[400],
+                      fontWeight: FontWeight.bold,
+                      fontSize: 28.0,
+                      letterSpacing: 2.0,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 200.0),
+                
+              ],
             ),
-          ],
-        ),
-      ),
-       floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            Navigator.push(context,
-                    new MaterialPageRoute(builder: (context) => new Login()));
-          },
-          child: const Icon(
-            Icons.home_filled,
           ),
-          backgroundColor: Colors.teal[400],
-        )
+          Padding(
+                    padding: const EdgeInsets.all(24.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Container(
+                            width: 65.0,
+                            height: 65.0,
+                            decoration: BoxDecoration(
+                                color: Colors.amberAccent,
+                                borderRadius: BorderRadius.circular(12.0)),
+                            alignment: Alignment.center,
+                            child: Image(
+                              image:
+                                  AssetImage("lib/assets/images/tab_saved.png"),
+                              height: 22.0,
+                              color: Colors.black,
+                            )),
+                        Expanded(
+                          child: GestureDetector(
+                            onTap: () {
+                            },
+                            child: Container(
+                              height: 65.0,
+                              margin: EdgeInsets.only(
+                                left: 16.0,
+                              ),
+                              decoration: BoxDecoration(
+                                color: Colors.teal[400],
+                                borderRadius: BorderRadius.circular(12.0),
+                              ),
+                              alignment: Alignment.center,
+                              child: Text(
+                                "Book Now",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16.0,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  )
+        ],
+        
+      ),
+      
+      //  floatingActionButton: FloatingActionButton(
+      //     onPressed: () {
+      //       Navigator.push(context,
+      //               new MaterialPageRoute(builder: (context) => new Login()));
+      //     },
+      //     child: const Icon(
+      //       Icons.home_filled,
+      //     ),
+      //     backgroundColor: Colors.teal[400],
+      //   )
     );
   }
 }
