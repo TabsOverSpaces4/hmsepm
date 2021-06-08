@@ -11,7 +11,14 @@ import 'package:hmsepm/pages/bill.dart';
 import 'package:hmsepm/pages/Signup.dart';
 
 
-
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+    );
+  }
+}
 
 void main() => runApp(MaterialApp(initialRoute: '/landingpage', routes: {
       '/': (context) => Loading(),
@@ -30,11 +37,3 @@ void main() => runApp(MaterialApp(initialRoute: '/landingpage', routes: {
     )
     );
     
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-    );
-  }
-}
