@@ -172,38 +172,7 @@ class _TravelAppState extends State<Book> {
 
 
 
-      bottomNavigationBar: BottomNavyBar(
-        selectedIndex: _currentIndex,
-        showElevation: false,
-        
-        itemCornerRadius: 24,
-        curve: Curves.easeIn,
-        backgroundColor: Colors.blueGrey[900],
-        onItemSelected: (index) => setState(() => _currentIndex = index),
-        items: <BottomNavyBarItem>[
-          BottomNavyBarItem(
-            icon: Icon(Icons.apps),
-            title: Text('Home'),
-            activeColor: Colors.teal[400],
-            textAlign: TextAlign.center,
-          ),
-          BottomNavyBarItem(
-            icon: Icon(Icons.bookmark),
-            title: Text('Bookmarks'),
-            activeColor: Colors.teal[400],
-            textAlign: TextAlign.center,
-          ),
-          BottomNavyBarItem(
-            icon: Icon(Icons.king_bed),
-            title: Text(
-              'Bookings',
-            ),
-            activeColor: Colors.teal[400],
-            textAlign: TextAlign.center,
-          ),
-          
-        ],
-      ),
+      
       
     );
   }
