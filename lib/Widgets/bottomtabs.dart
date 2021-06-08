@@ -18,7 +18,7 @@ class _BtmtabsState extends State<Btmtabs> {
     _selectedTab = widget.selectedTab ?? 0;
     return Container(
         decoration: BoxDecoration(
-            color: Colors.white,
+            color: Colors.blueGrey[900],
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(12.0),
               topRight: Radius.circular(12.0),
@@ -34,7 +34,7 @@ class _BtmtabsState extends State<Btmtabs> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             BtmtabBtn(
-              imagePath: "lib/Assets/images/tab_home.png",
+              imagePath: "lib/assets/images/tab_home.png",
               selected: _selectedTab == 0 ? true : false,
               onPressed: () {
                 widget.tabPressed(0);

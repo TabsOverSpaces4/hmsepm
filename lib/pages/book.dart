@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hmsepm/pages/travelcard.dart';
 import 'package:hmsepm/Widgets/bottomtabs.dart';
+import 'package:hmsepm/tabs/home.dart';
+import 'package:hmsepm/tabs/search.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -52,9 +54,9 @@ class _TravelAppState extends State<Book> {
             },
             children: [
               HomeTab(),
-              Searchtab(),
-              Savedtab(),
-              Profiletab(),
+              SearchTab(),
+              // Savedtab(),
+              // Profiletab(),
             ],
           ),
         )),

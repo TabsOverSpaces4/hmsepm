@@ -5,16 +5,16 @@ import 'package:hmsepm/Widgets/bottomtabs.dart';
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: Book(),
+   
   ));
 }
 
-class Book extends StatefulWidget {
+class HomeTab extends StatefulWidget {
   @override
   _TravelAppState createState() => _TravelAppState();
 }
 
-class _TravelAppState extends State<Book> {
+class _TravelAppState extends State<HomeTab> {
   List<String> urls = [
     "https://images.unsplash.com/photo-1605346434674-a440ca4dc4c0?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGhvdGVsJTIwcm9vbXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
     "https://images.unsplash.com/photo-1593560704563-f176a2eb61db?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8aW5kaWFuJTIwZm9vZHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
