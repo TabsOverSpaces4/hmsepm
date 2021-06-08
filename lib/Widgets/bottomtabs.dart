@@ -18,7 +18,7 @@ class _BtmtabsState extends State<Btmtabs> {
     _selectedTab = widget.selectedTab ?? 0;
     return Container(
         decoration: BoxDecoration(
-            color: Colors.blueGrey[900],
+            color: Colors.white,
             ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -76,14 +76,14 @@ class BtmtabBtn extends StatelessWidget {
         decoration: BoxDecoration(
             border: Border(
                 top: BorderSide(
-          color: _selected ? Theme.of(context).accentColor : Colors.transparent,
+          color: _selected ? Colors.teal[400] : Colors.transparent,
           width: 2.0,
         ))),
         child: Image(
           image: AssetImage(imagePath ?? "lib/Assets/images/tab_home.png"),
           width: 26.0,
           height: 26.0,
-          color: _selected ? Theme.of(context).accentColor : Colors.white,
+          color: _selected ? Colors.teal[400] : Colors.grey,
         ),
       ),
     );

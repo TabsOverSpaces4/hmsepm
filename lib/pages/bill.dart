@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 void main() => runApp(MaterialApp(
-  home: Bill(),
-));
+      home: Bill(),
+    ));
 
 class Bill extends StatelessWidget {
   @override
@@ -26,15 +26,14 @@ class Bill extends StatelessWidget {
                   child: CircleAvatar(
                     radius: 80.0,
                     backgroundImage: AssetImage(
-                                "lib/assets/images/logo.png",
-                              ),
+                      "lib/assets/images/logo.png",
+                    ),
                   ),
                 ),
                 Divider(
                   color: Colors.grey[800],
                   height: 60.0,
                 ),
-          
                 SizedBox(height: 30.0),
                 Center(
                   child: Text(
@@ -102,60 +101,58 @@ class Bill extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 200.0),
-                
               ],
             ),
           ),
           Padding(
-                    padding: const EdgeInsets.all(24.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Container(
-                            width: 65.0,
-                            height: 65.0,
-                            decoration: BoxDecoration(
-                                color: Colors.amberAccent,
-                                borderRadius: BorderRadius.circular(12.0)),
-                            alignment: Alignment.center,
-                            child: Image(
-                              image:
-                                  AssetImage("lib/assets/images/tab_saved.png"),
-                              height: 22.0,
-                              color: Colors.black,
-                            )),
-                        Expanded(
-                          child: GestureDetector(
-                            onTap: () {
-                            },
-                            child: Container(
-                              height: 65.0,
-                              margin: EdgeInsets.only(
-                                left: 16.0,
-                              ),
-                              decoration: BoxDecoration(
-                                color: Colors.teal[400],
-                                borderRadius: BorderRadius.circular(12.0),
-                              ),
-                              alignment: Alignment.center,
-                              child: Text(
-                                "Book Now",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16.0,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                            ),
-                          ),
-                        )
-                      ],
+            padding: const EdgeInsets.all(24.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Container(
+                    width: 65.0,
+                    height: 65.0,
+                    decoration: BoxDecoration(
+                        color: Colors.amberAccent,
+                        borderRadius: BorderRadius.circular(12.0)),
+                    alignment: Alignment.center,
+                    child: Image(
+                      image: AssetImage("lib/assets/images/tab_saved.png"),
+                      height: 22.0,
+                      color: Colors.black,
+                    )),
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/form');
+                    },
+                    child: Container(
+                      height: 65.0,
+                      margin: EdgeInsets.only(
+                        left: 16.0,
+                      ),
+                      decoration: BoxDecoration(
+                        color: Colors.teal[400],
+                        borderRadius: BorderRadius.circular(12.0),
+                      ),
+                      alignment: Alignment.center,
+                      child: Text(
+                        "Book Now",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16.0,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
                     ),
-                  )
+                  ),
+                )
+              ],
+            ),
+          )
         ],
-        
       ),
-      
+
       //  floatingActionButton: FloatingActionButton(
       //     onPressed: () {
       //       Navigator.push(context,

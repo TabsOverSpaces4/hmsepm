@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hmsepm/pages/bill.dart';
 import 'package:hmsepm/pages/travelcard.dart';
 
 void main() {
@@ -36,10 +35,10 @@ class _TravelAppState extends State<HomeTab> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.blueGrey[900],
+        backgroundColor: Colors.white,
         appBar: AppBar(
           elevation: 0.0,
-          backgroundColor: Colors.blueGrey[900],
+          backgroundColor: Colors.white,
           title: Row(
             children: [],
           ),
@@ -53,7 +52,7 @@ class _TravelAppState extends State<HomeTab> {
               Text(
                 "Welcome to HMS",
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                   fontSize: 26.0,
                   fontWeight: FontWeight.w600,
                 ),
