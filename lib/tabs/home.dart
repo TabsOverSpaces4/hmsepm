@@ -147,7 +147,7 @@ class _TravelAppState extends State<HomeTab> {
                                   travelCard(
                                       urls[6], "Visit Kodai", "37Kms", 4),
                                   travelCard(urls[8],
-                                      "bannerghatta national park", "12kms", 4),
+                                      "bannerghatta national park", "18kms", 4),
                                 ],
                               ),
                             ),
