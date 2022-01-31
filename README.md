@@ -1,22 +1,54 @@
-# hmsepm
 
-A new Flutter project.
+# HMSepm
 
-## Getting Started
+Hotel Management Systems using flutter. 
 
-Front-end work of my project management assignment.
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Tech Stack
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+**Client:** Flutter
 
-<img width="713" alt="image" src="https://user-images.githubusercontent.com/78035291/151755802-81ee4847-62bd-4791-9941-726d06df02af.png">
+**Server:** Firebase
 
-<img width="717" alt="image" src="https://user-images.githubusercontent.com/78035291/151756158-3e356683-a24e-44d0-b9b4-ba640dbd0a84.png">
+
+## Acknowledgements
+
+ - [Pub dev](https://pub.dev/)
+ - [Documentation](https://docs.flutter.dev/)
+ - [Image Collection](https://stock.adobe.com/in?ef_id=Cj0KCQiAi9mPBhCJARIsAHchl1y9UyaVlEr34j-IFNZhesz9x320HC3jufYPAH8kcl49l66cZ375dg8aApMJEALw_wcB:G:s&s_kwcid=AL!3085!3!456723993344!e!!g!!adobe%20stocks!6828711555!74928189810&as_channel=sem&as_campclass=brand&as_campaign=IN|CPRO|Stock|PURCH|AS_Brand_Exact|GG||&as_source=google&mv=search&as_camptype=acquisition&sdid=599F8S6N)
+
+
+## Installation
+
+Install my-project with npm
+
+```bash
+  git clone https://github.com/TabsOverSpaces4/hmsepm.git
+  cd /project-directory
+  flutter pub get
+  flutter run
+```
+    
+## Features
+
+- Online consultation
+- Book at your convenience
+- From Booking to departures: Everything's taken care of
+- Cross platform
+
+
+## Screenshots
+
+
+![App Screenshot](https://user-images.githubusercontent.com/78035291/151755802-81ee4847-62bd-4791-9941-726d06df02af.png)
+
+![App Screenshot](https://user-images.githubusercontent.com/78035291/151756158-3e356683-a24e-44d0-b9b4-ba640dbd0a84.png)
+
+
+## Support
+
+For support, email at harshworks2401@gmail.com
+
+
